@@ -17,12 +17,12 @@ Este informe presenta una gramática en Prolog, basada en Definite Clause Gramma
 •	Define una oración como la combinación de un Sintagma Nominal (SN) y un Sintagma Verbal (SV).<br>
 •	La concordancia en número (Num) entre el sujeto y el verbo es esencial.<br>
 
-2. Sintagma Nominal (sn/3)
+2. Sintagma Nominal (sn/3)<br>
 `sn(sn(DET,N),Gen,Num) --> det(DET,Gen,Num), n(N,Gen,Num).`<br>
 •	Compuesto por un Determinante (DET) y un Nombre (N).<br>
 •	Ambos deben coincidir en género (Gen) y número (Num).<br>
 
-3. Sintagma Verbal (sv/2)
+3. Sintagma Verbal (sv/2)<br>
 `sv(sv(VT,SN),Num) --> vt(VT,Num), sn(SN,_Gen,_Num). sv(sv(VI),Num) --> vi(VI,Num).` <br>
 •	Los verbos transitivos (VT) pueden ir acompañados de un objeto directo (SN).<br>
 •	Los verbos intransitivos (VI) no requieren un complemento nominal.<br>
@@ -53,7 +53,7 @@ Este informe presenta una gramática en Prolog, basada en Definite Clause Gramma
 ### Funcionamiento
 Para probar la gramática en Prolog, se pueden realizar consultas como:<br>
 
-1. Generar la estructura sintáctica de una oración
+1. Generar la estructura sintáctica de una <br>
 `phrase(o(O), [la, empleada, trabaja]).`<br>
 •	Resultado esperado:<br>
 `O = o(sn(det(la), n(empleada)), sv(vi(trabaja)))`<br>
