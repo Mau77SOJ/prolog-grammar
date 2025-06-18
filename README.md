@@ -12,4 +12,5 @@ consult('src/grammar.pl').
 phrase(o(O), [la, empleada, trabaja]).
 - Verificar la validez:
 phrase(o(_), [los, empleados, cobran, los, sueldos]).<br>
+
 Licencia: Este proyecto se distribuye bajo la licencia Apache-2.0.
