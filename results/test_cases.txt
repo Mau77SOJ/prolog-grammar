@@ -1,0 +1,17 @@
+Pruebas de frases válidas
+
+Consulta: phrase(o(O), [la, empleada, trabaja]).
+Resultado esperado: O = o(sn(det(la), n(empleada)), sv(vi(trabaja)))
+Consulta: phrase(o(O), [los, empleados, cobran, los, sueldos]).
+Resultado esperado: O = o(sn(det(los), n(empleados)), sv(vt(cobran), sn(det(los), n(sueldos))))
+Consulta: phrase(o(_), [el, empleado, cobra, un, sueldo]).
+Resultado esperado: true
+
+Pruebas de frases inválidas
+
+Consulta: phrase(o(_), [empleado, la, trabaja]).
+Resultado esperado: false (Orden incorrecto: determinante después del sustantivo)
+Consulta: phrase(o(_), [los, empleados, trabaja]).
+Resultado esperado: false (Concordancia incorrecta: "empleados" es plural, "trabaja" es singular)
+Consulta: phrase(o(_), [una, empleados, cobra]).
+Resultado esperado: false (Discordancia entre "una" y "empleados")
